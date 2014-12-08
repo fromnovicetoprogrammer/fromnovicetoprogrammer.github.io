@@ -1,0 +1,156 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Blogging with Ghost and Github pages</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../content/images/favicon.ico?v=2">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=45a5ecabfb">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <meta name="generator" content="Ghost 0.5">
+<link rel="alternate" type="application/rss+xml" title="From novice to programmer" href="../rss/index.html">
+<link rel="canonical" href="http://localhost:2368/blogging-with-ghost-and-github-pages/">
+</head>
+<body class="post-template">
+
+    
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="../">Home</a>
+        <a class="subscribe-button icon-feed" href="../rss/index.rss">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Blogging with Ghost and Github pages</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2014-10-20">20 October 2014</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>I decided to under go the feat of creating a blog with my  explots at turing. I initially decide to do blogger since i had already had a google account. But after a very short amount of time i realized that it was not going to allow me to do as much as would like to. So i did some research and found ghost, a very nice and easy to use blogging service that had all the add-ons and custom themes i could ever want.</p>
+
+<p>I loved the ghost platform but i did not like the fact that i had to pay $10 a month to run a blog. When people call me a geek i say thank you so i looked in to free hosting and blogging platforms. I found that ghost could be hosted on a server be it local or web and went on to looking for a way to host it on github pages. I found 2 blogs that explained how the process went but neither of them worked right for me.</p>
+
+<p>So i need to preface the instructions with im running a mac so they maybe slightly different depending on the rig you use.</p>
+
+<p><strong>Start by downloading the enviroments</strong></p>
+
+<ul>
+<li>Install Node <br>
+<a href="http://nodejs.org/dist/v0.10.33/node-v0.10.33.pkg" title="Node">Download Node</a></li>
+<li>Install Python <br>
+<a href="https://www.python.org/downloads/release/python-278/" title="Python">Download Python 2.7.8</a></li>
+<li>Run code it your terminal to install "pip" <br>
+<code>curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | sudo python2.7</code>  </li>
+<li>Then use pip to install buster <br>
+<code>pip install buster</code>  </li>
+<li>Then wget which is required by buster with <br>
+<code>brew install wget</code></li>
+</ul>
+
+<p><strong>Okay so now that we have everything installed that we need to run the blog lets get the fun part started.</strong>    </p>
+
+<p><strong>Download the ghost platform to run locally.</strong></p>
+
+<ul>
+<li>Download <a href="https://ghost.org/zip/ghost-0.5.6.zip" title="Ghost">Ghost</a></li>
+<li>Unzip and go to the directory (unzip to the directory you want to have ghost live forever)</li>
+<li>Again in your terminal run to install the server <br>
+<code>npm install</code></li>
+<li>And then to run the server locally run <br>
+<code>npm start</code></li>
+<li>Visit <a href="http://localhost:2368/">http://localhost:2368/</a> to see that everything is working correctly.</li>
+</ul>
+
+<p><strong>So now that we have the blog running locally we will get it set up on github with buster.</strong></p>
+
+<p><strong>Now to create a Github page for your blog</strong>         </p>
+
+<ul>
+<li>Go to you github profile and create a public repo with the name of your account(for me is the repo name was <strong>larsonkonr.github.io</strong>) but it you really want to i created a seperate account with the name of what i wanted the blog to be.  </li>
+<li>In the same directory that you put the ghost files create a folder with the name of your blog to keep the generated static files separately</li>
+<li>cd into the folder which you just created </li>
+<li>then to setup the location for the repo <br>
+<code>buster setup</code></li>
+<li>and when promted enter the repo you just created for me that is <a href="https://github.com/larsonkonr/larsonkonr.github.io.git">https://github.com/larsonkonr/larsonkonr.github.io.git</a></li>
+<li>once that is completed run this to generate the static files <br>
+<code>buster generate --domain=http://127.0.0.1:2368</code></li>
+<li>then cd into static <br>
+<code>cd static</code>  </li>
+<li>Now to get it up on github <br>
+<code>git add .</code> <br>
+<code>git commit -m 'Initial commit'</code> <br>
+<code>git push</code></li>
+</ul>
+
+<p>All we have to do now is wait. although github says that you only have to wait 10 minutes i had to wait 26 minutes but after everything it was the hardest wait with constantly clicking refresh. </p>
+
+<p>To change any of the styling you have to edit them in the  ghost directory. Then boot up your local server and add or change any post you would like. Then to get that on your hosted blog you need to run <code>buster generate --domain=http://127.0.0.1:2368</code> and then add, commit, and push to github.</p>
+
+<p>But there you have it a  blog using ghost hosted on github.</p>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="../author/konr-larson/" style="background-image: url(../content/images/2014/12/Konr-Larson-Head-shot.jpg)"><span class="hidden">Konr Larson's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="../author/konr-larson/">Konr Larson</a></h4>
+
+                    <p>Read <a href="../author/konr-larson/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/share?text=Blogging%20with%20Ghost%20and%20Github%20pages&amp;url=http://localhost:2368/blogging-with-ghost-and-github-pages/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/blogging-with-ghost-and-github-pages/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/blogging-with-ghost-and-github-pages/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+         <section class="copyright"><a href="../">From novice to programmer</a> © 2014</section>
+    </footer>
+
+    <script src="../public/jquery.js?v=45a5ecabfb"></script>
+
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=45a5ecabfb"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=45a5ecabfb"></script>
+
+</body>
