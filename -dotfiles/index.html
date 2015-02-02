@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Event Reporter</title>
+    <title>.Dotfiles</title>
     <meta name="description" content="">
 
     <meta name="HandheldFriendly" content="True">
@@ -16,7 +16,7 @@
 
     <meta name="generator" content="Ghost 0.5">
 <link rel="alternate" type="application/rss+xml" title="From novice to programmer" href="../rss/index.html">
-<link rel="canonical" href="http://localhost:2368/event-reporter/">
+<link rel="canonical" href="http://localhost:2368/-dotfiles/">
 </head>
 <body class="post-template">
 
@@ -35,14 +35,35 @@
     <article class="post">
 
         <header class="post-header">
-            <h1 class="post-title">Event Reporter</h1>
+            <h1 class="post-title">.Dotfiles</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2014-10-03">03 October 2014</time> 
+                <time class="post-date" datetime="2014-12-11">11 December 2014</time> 
             </section>
         </header>
 
         <section class="post-content">
-            <p>This week was definitely the hardest so far. We got the project Event Reporter which is a pairing project. It was weird to work with someone on the same project since we hadn't done it yet but it was very successful. It was a dynamic that was interesting to be able to split things up so we both had things to work on on our own. I foudn it a little hard to not do something someone else was working on or change something that they really need but luckily early on we found out about Waffle.io which is a very useful web app to help manage to-dos and to be able to assign people to specific things. Although this week was hard, I've been told that its definitely nothing to be compared to the Sales Engine that we will get on Monday. This will be 2 weeks working with the same person.</p>
+            <p>If you're a developer or just a techie all the specialized shortcuts and installed packages you have are very important to your flow and productivity and if you heaven forbid happen to lose your computer it would be extremely hard to reproduce everything you had, or if you are using multiple computers consistency between machines is key. With this tutorial you will be able to save and retrieve those precious files with ease.</p>
+
+<p>Lets start by checking out all of the dotfiles </p>
+
+<ul>
+<li>Open your terminal and navigate to your root directory</li>
+<li>Enter <code>ls-a</code> and it will give you all the files even the hidden ones which we are looking for.</li>
+<li>Take note of all the ones you would like to save i.e. vim, bash, gitignore and any others there you would like to save.</li>
+<li>Create a directory with in root name .dotfiles <br>
+<code>mkdir .dotfiles</code></li>
+<li>Then we can start to move your files into that directory ( you can either keep the files as dots or you can change them to something viewable <br>
+<code>mv .vimrc .dotfiles/vimrc</code> etc for all the files and folder you want</li>
+<li>When all files are transferred we will symlink all the files back to where they came from. Go to the .dotfile directory and run this for every file <br>
+<code>ln -s vimrc ~/.vimrc</code></li>
+<li>Now that we have everything symlinked all that is left is to get them saved on github <br>
+<code>git init</code> <br>
+<code>git add .</code> <br>
+<code>git commit</code>
+<code>git push</code></li>
+</ul>
+
+<p>Now what ever the situation all you need to do is pull the repo and symlink everything back and you will be back  to peak productivity.</p>
         </section>
 
         <footer class="post-footer">
@@ -65,13 +86,13 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="https://twitter.com/share?text=Event%20Reporter&amp;url=http://localhost:2368/event-reporter/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <a class="icon-twitter" href="https://twitter.com/share?text=.Dotfiles&amp;url=http://localhost:2368/-dotfiles/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/event-reporter/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/-dotfiles/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/event-reporter/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/-dotfiles/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
             </section>

@@ -11,7 +11,7 @@
 
     <link rel="shortcut icon" href="../content/images/favicon.ico?v=2">
 
-    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=45a5ecabfb">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=4c0d11250b">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
 
     <meta name="generator" content="Ghost 0.5">
@@ -37,29 +37,29 @@
         <header class="post-header">
             <h1 class="post-title">Blogging with Ghost and Github pages</h1>
             <section class="post-meta">
-                <time class="post-date" datetime="2014-10-20">20 October 2014</time> 
+                <time class="post-date" datetime="2014-10-22">22 October 2014</time> 
             </section>
         </header>
 
         <section class="post-content">
-            <p>I decided to under go the feat of creating a blog with my  explots at turing. I initially decide to do blogger since i had already had a google account. But after a very short amount of time i realized that it was not going to allow me to do as much as would like to. So i did some research and found ghost, a very nice and easy to use blogging service that had all the add-ons and custom themes i could ever want.</p>
+            <p>I decided to under go the feat of creating a blog with my exploits at Turing. I initially decide to do blogger since I already had a Google account, but after a short amount of time I realized that it was not going to allow me to do as much as would like to. So I did some research and found Ghost, a very nice and easy to use blogging service that had all the add-ons and custom themes I could ever want.</p>
 
-<p>I loved the ghost platform but i did not like the fact that i had to pay $10 a month to run a blog. When people call me a geek i say thank you so i looked in to free hosting and blogging platforms. I found that ghost could be hosted on a server be it local or web and went on to looking for a way to host it on github pages. I found 2 blogs that explained how the process went but neither of them worked right for me.</p>
+<p>I loved the Ghost platform but I did not like the fact that I had to pay $10 a month to run a blog. When people call me a geek I say, “Thank you!” I took away from this and looked for free hosting and blogging platforms. I found that Ghost could be hosted on a server, be it local or web, and went on to looking for a way to host it on github pages. I found two blogs that explained how the process went but neither of them were what I was needing.</p>
 
-<p>So i need to preface the instructions with im running a mac so they maybe slightly different depending on the rig you use.</p>
+<p>In prefacing the instructions, I should tell you that I am running a mac so depending on what rig you're using, it might be slightly different.</p>
 
-<p><strong>Start by downloading the enviroments</strong></p>
+<p><strong>Start by downloading the enviroments:</strong></p>
 
 <ul>
 <li>Install Node <br>
 <a href="http://nodejs.org/dist/v0.10.33/node-v0.10.33.pkg" title="Node">Download Node</a></li>
 <li>Install Python <br>
-<a href="https://www.python.org/downloads/release/python-278/" title="Python">Download Python 2.7.8</a></li>
-<li>Run code it your terminal to install "pip" <br>
-<code>curl --silent --show-error --retry 5 https://bootstrap.pypa.io/get-pip.py | sudo python2.7</code>  </li>
-<li>Then use pip to install buster <br>
+If you have have homebrew run <br>
+<code>brew install python</code> <br>
+or <a href="https://www.python.org/downloads/release/python-278/" title="Python">Download Python 2.7.8</a>  </li>
+<li>Use pip to install buster <br>
 <code>pip install buster</code>  </li>
-<li>Then wget which is required by buster with <br>
+<li>And lastly, use wget which is required by buster with <br>
 <code>brew install wget</code></li>
 </ul>
 
@@ -68,8 +68,9 @@
 <p><strong>Download the ghost platform to run locally.</strong></p>
 
 <ul>
+<li>Create a directory that all blog will live in.</li>
 <li>Download <a href="https://ghost.org/zip/ghost-0.5.6.zip" title="Ghost">Ghost</a></li>
-<li>Unzip and go to the directory (unzip to the directory you want to have ghost live forever)</li>
+<li>Unzip and go to the directory</li>
 <li>Again in your terminal run to install the server <br>
 <code>npm install</code></li>
 <li>And then to run the server locally run <br>
@@ -77,15 +78,13 @@
 <li>Visit <a href="http://localhost:2368/">http://localhost:2368/</a> to see that everything is working correctly.</li>
 </ul>
 
-<p><strong>So now that we have the blog running locally we will get it set up on github with buster.</strong></p>
+<p><strong>So now that we have the blog running locally, we will get it set up on github with buster.</strong></p>
 
 <p><strong>Now to create a Github page for your blog</strong>         </p>
 
 <ul>
 <li>Go to you github profile and create a public repo with the name of your account(for me is the repo name was <strong>larsonkonr.github.io</strong>) but it you really want to i created a seperate account with the name of what i wanted the blog to be.  </li>
-<li>In the same directory that you put the ghost files create a folder with the name of your blog to keep the generated static files separately</li>
-<li>cd into the folder which you just created </li>
-<li>then to setup the location for the repo <br>
+<li>In the same directory that you put the ghost files setup the location for the static files with <br>
 <code>buster setup</code></li>
 <li>and when promted enter the repo you just created for me that is <a href="https://github.com/larsonkonr/larsonkonr.github.io.git">https://github.com/larsonkonr/larsonkonr.github.io.git</a></li>
 <li>once that is completed run this to generate the static files <br>
@@ -98,11 +97,11 @@
 <code>git push</code></li>
 </ul>
 
-<p>All we have to do now is wait. although github says that you only have to wait 10 minutes i had to wait 26 minutes but after everything it was the hardest wait with constantly clicking refresh. </p>
+<p>All we have to do now is wait! Although github says that you'll only have to wait 10 minutes, I should warn you that I had to wait 26 minutes. After everything it was seriously the hardest wait with constantly clicking refresh.</p>
 
-<p>To change any of the styling you have to edit them in the  ghost directory. Then boot up your local server and add or change any post you would like. Then to get that on your hosted blog you need to run <code>buster generate --domain=http://127.0.0.1:2368</code> and then add, commit, and push to github.</p>
+<p>To change any of the styling you have to edit them in the ghost directory. Boot up your local server and add or change any post you would like. To get that on your hosted blog you need to run <code>buster generate --domain=http://127.0.0.1:2368</code>  and then add, commit, and push to github.</p>
 
-<p>But there you have it a  blog using ghost hosted on github.</p>
+<p>There you have it! Your own blog using ghost hosted on github.</p>
         </section>
 
         <footer class="post-footer">
@@ -145,12 +144,12 @@
 
 
     <footer class="site-footer clearfix">
-         <section class="copyright"><a href="../">From novice to programmer</a> © 2014</section>
+         <section class="copyright"><a href="../">From novice to programmer</a> © 2015</section>
     </footer>
 
-    <script src="../public/jquery.js?v=45a5ecabfb"></script>
+    <script src="../public/jquery.js?v=4c0d11250b"></script>
 
-    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=45a5ecabfb"></script>
-    <script type="text/javascript" src="../assets/js/index.js?v=45a5ecabfb"></script>
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=4c0d11250b"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=4c0d11250b"></script>
 
 </body>
